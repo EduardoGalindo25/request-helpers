@@ -1,0 +1,20 @@
+{
+    "name": "gabogalro/request-helpers",
+    "description": "Request helpers for native PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gabogalro",
+            "email": "eduardogalro32@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "gabogalro\\responseHelpers\\": "src/"
+        }
+    }
+}
