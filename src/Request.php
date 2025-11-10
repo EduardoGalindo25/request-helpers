@@ -23,7 +23,7 @@ class Request
         $headers = self::headers();
         $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
         $isJson = isset($headers['Content-Type']) && stripos($headers['Content-Type'], 'application/json') !== false;
-        if ($isJson && in_array($method, ['POST', 'PUT', 'PATCH'])) {
+        if ($isJson && in_array($method, ['POST', 'PUT', 'PATCH', 'DELETE'])) {
             $rawInput = file_get_contents('php://input');
             return json_decode($rawInput, true) ?? [];
         }
@@ -58,7 +58,7 @@ class Request
     {
         $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
-        if (!in_array($method, ['GET', 'PUT', 'PATCH'])) {
+        if (!in_array($method, ['GET', 'PUT', 'PATCH', 'DELETE'])) {
             return $key ? $default : [];
         }
 
